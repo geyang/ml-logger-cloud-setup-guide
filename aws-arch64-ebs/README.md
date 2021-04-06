@@ -2,6 +2,12 @@
 
 This terraform reciepie will enable you to setup a low-cost arm-based instance on AWS without much manual work.
 
+## Security
+
+**NOTE: It is extremely important to make sure that you do not commit your AWS/GCE access information are off-the-record, because all GitHub public repo/gists are crawled by bots on a daily basis, and bad guy and gals will abuse your account.**
+
+ 
+
 ## Setting up AWS Key Pairs
 
 To launch `ec2` instances you need to create key pairs. Key pairs are specific to each availability zone, which is why `doodad` post-fixes the name of each key pair with the zone name. For detailed guide take a look at the [aws documentation on key pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws). 
