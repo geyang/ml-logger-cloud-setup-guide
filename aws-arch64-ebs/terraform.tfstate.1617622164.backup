@@ -1,0 +1,413 @@
+{
+  "version": 4,
+  "terraform_version": "0.14.9",
+  "serial": 229,
+  "lineage": "96a83eb5-6b81-1af8-d8ed-6de5cb5f680e",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_ebs_volume",
+      "name": "runs-data",
+      "provider": "provider[\"registry.terraform.io/-/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:055406702465:volume/vol-0338a10d96c2878fb",
+            "availability_zone": "us-west-2b",
+            "encrypted": false,
+            "id": "vol-0338a10d96c2878fb",
+            "iops": 100,
+            "kms_key_id": "",
+            "multi_attach_enabled": false,
+            "outpost_arn": "",
+            "size": 20,
+            "snapshot_id": "",
+            "tags": {
+              "Name": "runs-data"
+            },
+            "type": "gp2"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_instance.logging-server"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_eip",
+      "name": "instrument_ip",
+      "provider": "provider[\"registry.terraform.io/-/aws\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "allocation_id": null,
+            "associate_with_private_ip": null,
+            "association_id": "eipassoc-05e24b93681db3f2f",
+            "customer_owned_ip": "",
+            "customer_owned_ipv4_pool": "",
+            "domain": "vpc",
+            "id": "eipalloc-35c14409",
+            "instance": "i-079e95abeb4227f3c",
+            "network_interface": "eni-039f9065539582483",
+            "private_dns": "ip-172-31-28-147.us-west-2.compute.internal",
+            "private_ip": "172.31.28.147",
+            "public_dns": "ec2-54-71-92-65.us-west-2.compute.amazonaws.com",
+            "public_ip": "54.71.92.65",
+            "public_ipv4_pool": "amazon",
+            "tags": {},
+            "timeouts": {
+              "delete": null,
+              "read": null,
+              "update": null
+            },
+            "vpc": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxODAwMDAwMDAwMDAsInJlYWQiOjkwMDAwMDAwMDAwMCwidXBkYXRlIjozMDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "aws_iam_instance_profile.main",
+            "aws_instance.logging-server",
+            "aws_security_group.security_key"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_instance_profile",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/-/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::055406702465:instance-profile/main",
+            "create_date": "2018-04-14T23:37:54Z",
+            "id": "main",
+            "name": "main",
+            "name_prefix": null,
+            "path": "/",
+            "role": "ge-bair",
+            "unique_id": "AIPAIX26RODLXLNMIM6IM"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "aws_iam_role.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_policy",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/-/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::055406702465:policy/ec2-s3-policy",
+            "description": "A test policy",
+            "id": "arn:aws:iam::055406702465:policy/ec2-s3-policy",
+            "name": "ec2-s3-policy",
+            "name_prefix": null,
+            "path": "/",
+            "policy": "{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n      {\n        \"Effect\": \"Allow\",\n        \"Action\": [ \"s3:*\" ],\n        \"Resource\": [ \"*\" ]\n      },\n      {\n        \"Effect\": \"Allow\",\n        \"Action\": [ \"ec2:TerminateInstances\", \"ec2:CreateTags\" ],\n        \"Resource\": [ \"*\" ]\n      },\n      {\n        \"Effect\": \"Allow\",\n        \"Action\": [\n            \"tag:getResources\",\n            \"tag:getTagKeys\",\n            \"tag:getTagValues\",\n            \"tag:TagResources\",\n            \"tag:UntagResources\"\n        ],\n        \"Resource\": \"*\"\n      }\n    ]\n}\n"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/-/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::055406702465:role/ge-bair",
+            "assume_role_policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":[\"ssm.amazonaws.com\",\"ec2.amazonaws.com\"]},\"Action\":\"sts:AssumeRole\"}]}",
+            "create_date": "2018-04-14T23:37:43Z",
+            "description": "",
+            "force_detach_policies": false,
+            "id": "ge-bair",
+            "max_session_duration": 3600,
+            "name": "ge-bair",
+            "name_prefix": null,
+            "path": "/",
+            "permissions_boundary": null,
+            "tags": {},
+            "unique_id": "AROAJ36RA3AIEBKSXZH5C"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role_policy_attachment",
+      "name": "main-attach",
+      "provider": "provider[\"registry.terraform.io/-/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "ge-bair-20180418175539956500000001",
+            "policy_arn": "arn:aws:iam::055406702465:policy/ec2-s3-policy",
+            "role": "ge-bair"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "aws_iam_policy.main",
+            "aws_iam_role.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_instance",
+      "name": "logging-server",
+      "provider": "provider[\"registry.terraform.io/-/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "ami": "ami-0ad267d127a061b59",
+            "arn": "arn:aws:ec2:us-west-2:055406702465:instance/i-079e95abeb4227f3c",
+            "associate_public_ip_address": true,
+            "availability_zone": "us-west-2b",
+            "cpu_core_count": 2,
+            "cpu_threads_per_core": 1,
+            "credit_specification": [],
+            "disable_api_termination": true,
+            "ebs_block_device": [
+              {
+                "delete_on_termination": false,
+                "device_name": "/dev/sdh",
+                "encrypted": false,
+                "iops": 100,
+                "kms_key_id": "",
+                "snapshot_id": "",
+                "volume_id": "vol-0338a10d96c2878fb",
+                "volume_size": 20,
+                "volume_type": "gp2"
+              }
+            ],
+            "ebs_optimized": false,
+            "ephemeral_block_device": [],
+            "get_password_data": false,
+            "hibernation": false,
+            "host_id": null,
+            "iam_instance_profile": "main",
+            "id": "i-079e95abeb4227f3c",
+            "instance_initiated_shutdown_behavior": null,
+            "instance_state": "running",
+            "instance_type": "c6g.large",
+            "ipv6_address_count": 0,
+            "ipv6_addresses": [],
+            "key_name": "ge-berkeley",
+            "metadata_options": [
+              {
+                "http_endpoint": "enabled",
+                "http_put_response_hop_limit": 1,
+                "http_tokens": "optional"
+              }
+            ],
+            "monitoring": false,
+            "network_interface": [],
+            "outpost_arn": "",
+            "password_data": "",
+            "placement_group": "",
+            "primary_network_interface_id": "eni-039f9065539582483",
+            "private_dns": "ip-172-31-28-147.us-west-2.compute.internal",
+            "private_ip": "172.31.28.147",
+            "public_dns": "ec2-54-71-92-65.us-west-2.compute.amazonaws.com",
+            "public_ip": "54.71.92.65",
+            "root_block_device": [
+              {
+                "delete_on_termination": true,
+                "device_name": "/dev/xvda",
+                "encrypted": false,
+                "iops": 3000,
+                "kms_key_id": "",
+                "volume_id": "vol-080d0c2107277d898",
+                "volume_size": 1000,
+                "volume_type": "gp2"
+              }
+            ],
+            "secondary_private_ips": [],
+            "security_groups": [
+              "torch-gym-prebuilt"
+            ],
+            "source_dest_check": true,
+            "subnet_id": "subnet-e19e4698",
+            "tags": {
+              "Name": "Instrument Server"
+            },
+            "tenancy": "default",
+            "timeouts": null,
+            "user_data": "62e68c6e17b832a87c6b8b7f6e43d803799b5036",
+            "user_data_base64": null,
+            "volume_tags": {
+              "Name": "runs-data"
+            },
+            "vpc_security_group_ids": [
+              "sg-7f2fb901"
+            ]
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMCwidXBkYXRlIjo2MDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aws_iam_instance_profile.main",
+            "aws_security_group.security_key"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "security_key",
+      "provider": "provider[\"registry.terraform.io/-/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:us-west-2:055406702465:security-group/sg-7f2fb901",
+            "description": "Gym instance inoutbound rules",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-7f2fb901",
+            "ingress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 65535
+              },
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 22,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 22
+              },
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 4544,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 4545
+              },
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "samba drive dynamic RPC",
+                "from_port": 1024,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 5000
+              },
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "samba drive port",
+                "from_port": 445,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 445
+              }
+            ],
+            "name": "torch-gym-prebuilt",
+            "name_prefix": "",
+            "owner_id": "055406702465",
+            "revoke_rules_on_delete": false,
+            "tags": {},
+            "timeouts": {
+              "create": null,
+              "delete": null
+            },
+            "vpc_id": "vpc-eda5d094"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_volume_attachment",
+      "name": "instrument-data-volume-attachment",
+      "provider": "provider[\"registry.terraform.io/-/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "device_name": "/dev/sdh",
+            "force_detach": null,
+            "id": "vai-551613456",
+            "instance_id": "i-079e95abeb4227f3c",
+            "skip_destroy": true,
+            "volume_id": "vol-0338a10d96c2878fb"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_ebs_volume.runs-data",
+            "aws_instance.logging-server"
+          ]
+        }
+      ]
+    }
+  ]
+}

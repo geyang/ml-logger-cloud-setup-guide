@@ -1,0 +1,16 @@
+name: causal-infogan
+channels:
+dependencies:
+    - python==3.6.4
+    - numpy
+    - scipy
+    - matplotlib
+    - tensorflow
+    - pytest
+    - pip:
+        - mock
+        - jupyter
+        - termcolor
+        - jaynes
+        - params_proto
+        - waterbear

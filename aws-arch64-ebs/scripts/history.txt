@@ -1,0 +1,66 @@
+tmux -CC attach -t 0
+make launch-logger
+conda activate
+bash
+which conda
+which
+vim ~/.bashrc
+vim ~/.zshrc
+vim ~/.profile
+vim ~/.zshrc
+exit
+vim ~/.bashrc
+cat /etc/bashrc
+conda activate
+make launch-logger
+vim Makefile
+SANIC_REQUEST_MAX_SIZE=1000000000 python -m ml_logger.server --logdir ~/runs --port 8080 --host 0.0.0.0 --workers 4
+conda activate
+pip list | grep sanic
+conda deactivate
+pip list | grep sanic
+conda activate
+history
+exit
+which $HISTORY
+history
+bash
+SANIC_REQUEST_MAX_SIZE=1000000000 python -m ml_logger.server --logdir ~/runs --port 9080 --host 0.0.0.0 --workers 4
+SANIC_REQUEST_MAX_SIZE=10000000000 python -m ml_logger.server --logdir ~/runs --port 9080 --host 0.0.0.0 --workers 4
+SANIC_REQUEST_MAX_SIZE=10000000000 SANIC_TIMEOUT=36000 python -m ml_logger.server --logdir ~/runs --port 9080 --host 0.0.0.0 --workers 4
+conda activate
+SANIC_REQUEST_MAX_SIZE=10000000000 python -m ml_logger.server --logdir ~/runs --port 9080 --host 0.0.0.0 --workers 4
+SANIC_REQUEST_MAX_SIZE=10000000000 REQUEST_TIMEOUT=1 python -m ml_logger.server --logdir ~/runs --port 9080 --host 0.0.0.0 --workers 4
+SANIC_REQUEST_MAX_SIZE=10000000000 SANIC_REQUEST_TIMEOUT=1 python -m ml_logger.server --logdir ~/runs --port 9080 --host 0.0.0.0 --workers 4
+SANIC_REQUEST_MAX_SIZE=10000000000 SANIC_REQUEST_TIMEOUT=3600 python -m ml_logger.server --logdir ~/runs --port 9080 --host 0.0.0.0 --workers 4
+SANIC_REQUEST_MAX_SIZE=10000000000 SANIC_REQUEST_TIMEOUT=3600 SANIC_RESPONSE_TIMEOUT=1 python -m ml_logger.server --logdir ~/runs --port 9080 --host 0.0.0.0 --workers 4
+SANIC_REQUEST_MAX_SIZE=10000000000 SANIC_REQUEST_TIMEOUT=3600 SANIC_RESPONSE_TIMEOUT=3600 python -m ml_logger.server --logdir ~/runs --port 9080 --host 0.0.0.0 --workers 4
+tmux -CC attach -t 0
+hostname
+tmux -CC
+ssh supercloud
+hostname
+exit
+conda activate
+pip install --upgrade ml-logger==0.7.0rc6
+screen -r
+screen -r 20759
+screen
+tmux -CC attach -t 0
+vim Makefile
+make launch-dash
+vim Makefile
+screen -ls
+screen -r 23021..ip-172-31-28-147
+tmux -CC attath -t 0
+tmux -CC attach -t 0
+terraform -V
+terraform -v
+df -h
+lsblk
+sudo xfs_growfs -d ~/runs
+sudo resize2fs ~/runs
+df -h
+sudo resize2fs /home/ec2-user/runs
+sudo resize2fs /dev/nvme1n1
+df -h

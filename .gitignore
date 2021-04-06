@@ -1,0 +1,6 @@
+.idea
+.terraform
+secret.auto.tfvars
+ip_address.txt
+terraform.tfstate
+terraform.tfstate.backup

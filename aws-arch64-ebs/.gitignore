@@ -1,0 +1,8 @@
+.terraform
+secret.auto.tfvars
+
+ip_address.txt
+instrument_ip_address.txt
+
+terraform.tfstate
+terraform.tfstate.backup
