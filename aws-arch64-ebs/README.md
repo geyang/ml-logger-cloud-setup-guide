@@ -4,7 +4,7 @@ This terraform reciepie will enable you to setup a low-cost arm-based instance o
 
 ## Security
 
-**NOTE: It is extremely important to make sure that you do not commit your AWS/GCE access information are off-the-record, because all GitHub public repo/gists are crawled by bots on a daily basis, and bad guy and gals will abuse your account.**
+**NOTE: It is extremely important to make sure that you do not commit your AWS/GCE access information to a public gist or git repository. This is because all GitHub public repo/gists are crawled by bots on a daily basis, and bad guy and gals will abuse your account. Folks have been fired because of this.**
 
  
 
