@@ -144,7 +144,7 @@ resource "aws_ebs_volume" "runs-data" {
   //"${aws_instance.logging-server.availability_zone}"
   // for volume type see here: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html
   type = "gp2"
-  size = "40"
+  size = "60"
   tags = {
     Name = "runs-data"
   }
