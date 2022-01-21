@@ -1,4 +1,5 @@
 .idea
+.DS_Store
 .terraform
 secret.auto.tfvars
 ip_address.txt
