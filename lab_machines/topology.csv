@@ -1,9 +1,15 @@
-machine,gpus
-"improbable005", 1
-"improbable006", 1
-"improbable009", 1
-"improbable208", 4
-"improbablex001", 2
-"improbablex002", 2
-"improbablex003", 2
-"improbablex004", 2
+machine,gpus,modes
+improbable005,1,ssh-docker
+improbable006,1,ssh-docker
+improbable009,1,ssh-docker
+improbable208,4,ssh-docker
+improbablex001,2,ssh-docker
+improbablex002,2,ssh-docker
+improbablex003,2,ssh-docker
+improbablex004,2,ssh-docker
+visiongpu50,10,ssh-docker
+supercloud,16,slurm
+canon,16,slurm
+satori,16,slurm
+improbableai,400,gcp
+IsolaLab,400,gcp
